@@ -1,0 +1,46 @@
+<div class="jumbotron text-center">
+  <img class="img img-fluid" src="borger.jpg" alt="borger"/>
+  <h1>Can I get a borger?</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-4 offset-md-2">
+      <h2>Borgers to Nom</h2>
+      <ul>
+        {{#each burgers}} {{#unless devoured}}
+        <li>{{burger_name}}
+          <button class="eat-burger" data-id="{{this.id}}">DEVOUR!</button>
+        </li>
+        {{/unless}} {{/each}}
+      </ul>
+    </div>
+
+    <div class="col-md-4">
+      <h2>Nommed Borgers</h2>
+      <ul>
+        {{#each burgers}} {{#if devoured}}
+        <li>{{burger_name}}</li>
+        {{/if}} {{/each}}
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<br><br>
+
+<div class="row justify-content-center">
+  <form class="create-form">
+
+    <div class="form-group">
+      <label for="addBurger">Burger Name:</label>
+      <input type="text" id="addBurger" name="name">
+    </div>
+
+    <p>Type in the name of a burger you'd like to eat, then press
+      <button class="btn btn-primary" type="submit">Add Burger</button>
+    </p>
+  </form>
+</div>

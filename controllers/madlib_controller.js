@@ -4,7 +4,7 @@ var router = express.Router();
 
 // Import the model (burger.js) to use its database functions.
 var db = require("../models"),
-  burger = db.Burger;
+  madLib = db.MadLib;
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function (req, res) {
@@ -15,9 +15,9 @@ router.get("/", function (req, res) {
   //    console.log(hbsObject);
   //    res.render("index", hbsObject);
   //  });
-  burger.findAll({}).then(function (result) {
+  madLib.findAll({}).then(function (result) {
     var handleBarsObj = {
-      burgers: result
+      madLibs: result
     };
     res.render("index", handleBarsObj);
   })
@@ -28,45 +28,14 @@ router.post("/api/burgers", function (req, res) {
   //  // Send back the ID of the new quote
   //  res.json({ id: result.insertId });
   //});
-  burger.create({
-    burger_name: req.body.name
+  madLib.create({
+    word: req.body.name,
+    type: "Verb",
+    client_id: 0
   }).then(function (result) {
     // We have access to the new todo as an argument inside of the callback function
     res.json({ id: result.insertId });
   });
-});
-
-router.put("/api/burgers/:id", function (req, res) {
-  //  var condition = "id = " + req.params.id;
-  //  console.log("condition", condition);
-  //  burger.updateOne(
-  //    {
-  //      devoured: req.body.devoured
-  //    },
-  //    condition,
-  //    function (result) {
-  //      if (result.affectedRows === 0) {
-  //        // If no rows were changed, then the ID must not exist, so 404
-  //        return res.status(404).end();
-  //      }
-  //      res.status(200).end();
-  //    }
-  //  );
-  burger.update(
-    {
-      devoured: req.body.devoured
-    },
-    {
-      where: {
-        id: req.params.id
-      }
-    }).then(function (result) {
-      if (result.affectedRows === 0) {
-        // If no rows were changed, then the ID must not exist, so 404
-        return res.status(404).end();
-      }
-      res.status(200).end();
-    });
 });
 
 // Export routes for server.js to use.

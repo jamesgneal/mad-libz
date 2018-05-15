@@ -1,21 +1,20 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-      Entered Words
+      <strong>Entered Words</strong>
       {{#each madLibs}}
       <li>{{word}}</li>
       {{/each}}
     </div>
     <div class="col-md-6">
-      Story
-      {{words}}
+      <strong>Story</strong>
+      <p id="printedStory">{{story}}</p>
     </div>
   </div>
 </div>
 
 <br>
-<br>
-
+<br> {{!--
 <div class="row justify-content-center">
   <form class="create-form" id="wordAdd">
     <div class="form-group">
@@ -23,18 +22,34 @@
       <input type="text" id="addWord" name="name">
     </div>
     <p>Type in the name of a word!
-      <button class="btn btn-primary" type="submit" >Add Word</button>
+      <button class="btn btn-primary" type="submit">Add Word</button>
     </p>
   </form>
-</div>
+</div> --}} {{!--
 <div class="row justify-content-center">
   <button class="btn btn-primary" id="storyLoad" type="submit">Load A Story</button>
-</div>
+</div> --}}
 <div class="row justify-content-center">
-  <form class="create-form" id="storyAdd">
-    <div class="form-group">
-      <textarea class="form-control" id="storyForm" rows="5"></textarea>
-    </div>
-  <button class="btn btn-primary" type="submit">Add A Story</button>
-  </form>
+  <div class="col-md-10">
+    <form class="create-form" id="storyWordsAdd">
+      {{#each POS}}
+      <div class="form-group">
+        <label for="{{.}}">{{.}}:</label>
+        <input type="text" id="{{.}}" name="name">
+      </div>
+      {{/each}}
+      <button class="btn btn-primary" type="submit">Add Words To A Story</button>
+    </form>
+  </div>
 </div>
+{{!--
+<div class="row justify-content-center">
+  <div class="col-md-10">
+    <form class="create-form" id="storyAdd">
+      <div class="form-group">
+        <textarea class="form-control" id="storyForm" rows="5"></textarea>
+      </div>
+      <button class="btn btn-primary" type="submit">Add A Story</button>
+    </form>
+  </div>
+</div> --}}

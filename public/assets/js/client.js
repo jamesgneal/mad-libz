@@ -19,7 +19,7 @@ $(document).ready(function () {
     }
     $("#printedStory").empty();
     $("#printedStory").html(storyPlaceholder);
-    //also include a printedStory.show eventually
+    $("#printedStory").show();
     console.log(storyPlaceholder);
   })
   //fairly straightforward, just grab words from form and make an ajax call.

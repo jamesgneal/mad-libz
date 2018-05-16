@@ -1,5 +1,27 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
-$(function () {
+$(document).ready(function () {
+  var storyPlaceholder = $("#printedStory")[0].innerText;
+  var requiredInputsArray = storyPlaceholder.match(/\b[A-Z0-9]+\b/g);
+  //this prunes for "I" and other capitalized single-character words.
+  for (var i = 0; i < requiredInputsArray.length; i++) {
+    if (requiredInputsArray[i].length === 1) {
+      requiredInputsArray.splice(i, 1)
+    }
+  };
+  //sanitycheck the for loop
+  console.log(requiredInputsArray);
+  $("#storyWordsAdd").on("submit", function (event) {
+    event.preventDefault();
+    for (var i = 0; i < requiredInputsArray.length; i++) {
+      //find and replace RIA[i] with $(`#RIA[i]`).val().trim();
+      var newWord = $(`#${requiredInputsArray[i]}`).val().trim();
+      storyPlaceholder = storyPlaceholder.replace(requiredInputsArray[i], newWord);
+    }
+    $("#printedStory").empty();
+    $("#printedStory").html(storyPlaceholder);
+    $("#printedStory").show();
+    console.log(storyPlaceholder);
+  })
   //fairly straightforward, just grab words from form and make an ajax call.
   $("#storyAdd").on("submit", function (event) {
     event.preventDefault();

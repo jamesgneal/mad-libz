@@ -1,1 +1,2 @@
-CREATE DATABASE mad_libz
+CREATE DATABASE mad_libz;
+USE mad_libz;

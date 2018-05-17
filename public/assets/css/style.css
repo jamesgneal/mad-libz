@@ -10,3 +10,8 @@ li {
     display: inline-block;
     display: none;
 }
+
+#save-story,
+#new-story {
+    display: none;
+}

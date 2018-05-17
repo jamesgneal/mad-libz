@@ -4,6 +4,7 @@
   "description": "Interactive Mad-Libz Controller",
   "main": "server.js",
   "dependencies": {
+    "npm": "^6.0.1",
     "sequelize": "^4.37.7"
   },
   "devDependencies": {

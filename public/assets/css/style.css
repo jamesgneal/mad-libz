@@ -2,6 +2,11 @@ li {
     list-style-type: none;
 }
 
-#printedStory {
+#serverStory {
+    display: none;
+}
+
+.animated {
+    display: inline-block;
     display: none;
 }

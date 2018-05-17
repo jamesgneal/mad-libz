@@ -12,6 +12,6 @@
     "database": "gze7gulk92ws12ld",
     "host": "wm63be5w8m7gs25a.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql",
-    "use_env_variable": "mysql://qw6cfmn9ygntxzry:mxc6k8nv61al1pcz@wm63be5w8m7gs25a.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/gze7gulk92ws12ld"
+    "use_env_variable": "JAWSDB_URL"
   }
 }

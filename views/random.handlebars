@@ -8,7 +8,7 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
     <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="/assets/js/client.js"></script>
+    <script src="/assets/js/random.js"></script>
     <title>Are You Feelin' Mad Today?</title>
 </head>
 
@@ -24,25 +24,9 @@
                         <h1 class="text-center">
                             THIS IS MADLIBz
                         </h1>
-                        <p class="subtitle">
+                        <p id="subtitle">
                             (nursery rhyme version)
                         </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <form class="create-form" id="storyWordsAdd">
-                            <h5 class="text-center">User Words</h5>
-                            <p class="subtitle text-center">Pick a word for each part of speech<br>then read your mad-libbed story.</p>
-                            {{#each POS}}
-                            <div class="form-group">
-                                <label for="{{.}}">{{.}}:</label>
-                                <input type="text" id="{{.}}" name="name">
-                            </div>
-                            {{/each}}
-                            <div class="col-md-6 offset-md-3"></div>
-                            <button class="btn btn-outline-light btn-block" type="submit">Add Words</button>
-                        </form>
                     </div>
                 </div>
                 <div class="row">
@@ -50,10 +34,11 @@
                         <h5 class="text-center" id="story-area">Story</h5>
                         <p id="printedStory"></p>
                         <p id="serverStory">{{story}}</p>
-                        <button id="save-story" class="btn btn-outline-light btn-block" type="submit">Save My Story</button>
-                        <button id="new-story" class="btn btn-outline-light btn-block" type="submit">Make a New Madlib</button>
+                        <a href="./">
+                            <button id="new-story" class="btn btn-outline-light btn-block" type="submit">Make a New Madlib</button>
+                        </a>
                         <a href="./random">
-                            <button id="view-random-story" class="btn btn-outline-light btn-block" type="submit">View a Random Story</button>
+                            <button id="view-random-story" class="btn btn-outline-light btn-block" type="submit">View Another Random Story</button>
                         </a>
                     </div>
                 </div>

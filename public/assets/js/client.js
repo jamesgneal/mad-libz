@@ -1,6 +1,8 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
+var storyPlaceholder = "";
+
 $(document).ready(function() {
-	var storyPlaceholder = $("#serverStory")[0].innerText;
+	storyPlaceholder = $("#serverStory")[0].innerText;
 	var requiredInputsArray = storyPlaceholder.match(/\b[A-Z0-9]+\b/g);
 
 	//this prunes for "I" and other capitalized single-character words.
@@ -50,7 +52,7 @@ $(document).ready(function() {
             
         $("#save-story, #new-story").show("fast");
 
-		console.log(storyPlaceholder);
+        console.log(storyPlaceholder);
     });
     
 
@@ -59,22 +61,48 @@ $(document).ready(function() {
         event.preventDefault();
         location.reload();
     })
+
+
 	//fairly straightforward, just grab words from form and make an ajax call.
-	// $("#storyAdd").on("submit", function(event) {
-	// 	event.preventDefault();
-	// 	var newStory = {
-	// 		story: $("#storyForm")
-	// 			.val()
-	// 			.trim()
-	// 	};
-	// 	$.ajax("/api/madlibz/stories", {
-	// 		type: "POST",
-	// 		data: newStory
+	$("#save-story").on("click", function(event) {
+		event.preventDefault();
+		$.ajax("/api/madlibz/completedstories", {
+			type: "POST",
+			data: {
+                newStory: storyPlaceholder
+            }
+		}).then(function() {
+            console.log("Uploaded Story!");
+            $("#printedStory").empty();
+            $("#printedStory").html("Your story has been uploaded.");
+            $("#save-story").hide("fast");
+            $("#view-random-story").show("fast");
+		});
+    });
+    
+
+    // Display a random story
+    // $("#view-random-story").on("click", function(event) {
+    //     event.preventDefault();
+    //     $.ajax("/api/madlibz/completedstories", {
+	// 		type: "GET",
 	// 	}).then(function() {
-	// 		location.reload();
-	// 		console.log("Uploaded Story!");
+    //         console.log("Got a Story!");
+    //         $("#storyWordsAdd").hide();
+
+    //         $(".animated")
+	// 		.first()
+	// 		.show("fast", function showNext() {
+	// 			$(this)
+	// 				.next(".animated")
+	// 				.show("fast", showNext);
+    //         });
+            
+    //         $("#new-story").show("fast");
+
 	// 	});
-	// });
+    // });
+
 
 	// $("#wordAdd").on("submit", function(event) {
 	// 	// Make sure to preventDefault on a submit event.

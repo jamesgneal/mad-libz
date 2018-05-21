@@ -5,7 +5,9 @@
   "main": "server.js",
   "dependencies": {
     "mysql": "^2.15.0",
-    "sequelize": "^4.37.7"
+    "sequelize": "^4.37.7",
+    "underscore.string": "^3.3.4"
+
   },
   "devDependencies": {
     "body-parser": "^1.18.2",

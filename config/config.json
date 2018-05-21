@@ -1,9 +1,17 @@
 {
   "development": {
     "username": "root",
-    "password": "mbfijrwT1!",
+    "password": "S0m3b0dys@v3m3",
     "database": "mad_libz",
     "host": "127.0.0.1",
     "dialect": "mysql"
+  },
+  "production": {
+    "username": "qw6cfmn9ygntxzry",
+    "password": "mxc6k8nv61al1pcz",
+    "database": "gze7gulk92ws12ld",
+    "host": "wm63be5w8m7gs25a.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "dialect": "mysql",
+    "use_env_variable": "JAWSDB_URL"
   }
 }

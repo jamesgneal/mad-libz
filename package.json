@@ -4,12 +4,9 @@
   "description": "Interactive Mad-Libz Controller",
   "main": "server.js",
   "dependencies": {
-<<<<<<< HEAD
-    "npm": "^6.0.1",
-=======
     "mysql": "^2.15.0",
->>>>>>> b342e6a380619534d873e5fb77510735ceac0265
-    "sequelize": "^4.37.7"
+    "sequelize": "^4.37.7",
+    "underscore.string": "^3.3.4"
   },
   "devDependencies": {
     "body-parser": "^1.18.2",

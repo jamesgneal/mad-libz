@@ -8,7 +8,7 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
     <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="/assets/js/client.js"></script>
+    <script src="/assets/js/bundle.js"></script>
     <title>Are You Feelin' Mad Today?</title>
 </head>
 
@@ -33,7 +33,7 @@
                     <div class="col-md-12">
                         <form class="create-form" id="storyWordsAdd">
                             <h5 class="text-center">User Words</h5>
-                            <p class="subtitle text-center">Pick a word for each part of speech<br>then read your mad-libbed story.</p>
+                            <p id="user-notification" class="subtitle text-center">Pick a word for each part of speech<br>then read your mad-libbed story.</p>
                             {{#each POS}}
                             <div class="form-group">
                                 <label for="{{.}}">{{.}}:</label>

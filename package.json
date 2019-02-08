@@ -6,7 +6,8 @@
   "dependencies": {
     "mysql": "^2.15.0",
     "sequelize": "^4.37.7",
-    "underscore.string": "^3.3.4"
+    "underscore.string": "^3.3.4",
+    "lodash": ">=4.17.11"
 
   },
   "devDependencies": {

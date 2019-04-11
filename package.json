@@ -5,7 +5,7 @@
   "main": "server.js",
   "dependencies": {
     "mysql": "^2.15.0",
-    "sequelize": "^4.37.7",
+    "sequelize": "^5.3.0",
     "underscore.string": "^3.3.4",
     "lodash": ">=4.17.11"
 
